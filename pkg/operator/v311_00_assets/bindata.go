@@ -153,6 +153,10 @@ storageConfig:
 apiServerArguments:
   minimal-shutdown-duration:
   - 3s # give SDN some time to converge
+# IPv6 test hack
+servingInfo:
+  bindAddress: "[::]:8443"
+  bindNetwork: "tcp6"
 `)
 
 func v3110OpenshiftApiserverDefaultconfigYamlBytes() ([]byte, error) {
